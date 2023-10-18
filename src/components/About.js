@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About(props) {
     const [myStyle, setmyStyle] = useState(     {
         color: 'black',
         backgroundColor: 'white'
     }); 
 
-    const [myBtn, setmyBtn] = useState("Enable Dark Mode")
+    const [myBtn, setmyBtn] = useState("Enable Dark Mode");
 
     const darkmode = ()=> {
         if(myStyle.color === "white"){
@@ -14,14 +14,14 @@ export default function About() {
                 color: 'black',
                 backgroundColor: 'white'
             })
-            setmyBtn("Enabe Dark Mode")
+            setmyBtn("Enabe Dark Mode");
         }
         else{
             setmyStyle({
                 color: 'white',
                 backgroundColor: 'black'
             })
-            setmyBtn("Enabe Light Mode")
+            setmyBtn("Enabe Light Mode");
         }
     }
 

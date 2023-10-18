@@ -4,12 +4,18 @@ export default function Textform(props) {
     const handleUpClick = () => {
         console.log("Uppercase was clicked")
         let newText = text.toUpperCase();
-        setText(newText)
+        setText(newText);
+        props.showAlert("Converted to Uppercase", "Success");
+        props.showAlertColor("success");
+
     }
     const handleLowClick = () => {
-        console.log("LowerCase was clicked")
+        console.log("LowerCase was clicked");
         let newText = text.toLowerCase();
-        setText(newText)
+        setText(newText);
+        props.showAlert("Converted to Lowercase", "Success");
+        props.showAlertColor("success");
+
     }
     const searchEmail = () => {
         console.log("email")
@@ -18,9 +24,14 @@ export default function Textform(props) {
         if(extractedEmails && extractedEmails.length > 0){
             setExtractedEmails(extractedEmails);
             setNoEmailsFound(false);
+            props.showAlert("Email Found", "Success");
+            props.showAlertColor("success");
         }else{
             setExtractedEmails([]);
-            setNoEmailsFound(true)
+            setNoEmailsFound(true);
+            props.showAlert("Email not found", "Please try again");
+            props.showAlertColor("danger");
+
         }
        
     }
@@ -29,11 +40,14 @@ export default function Textform(props) {
         let newText = ("");
         setText(newText);
         setExtractedEmails([]);
-        setNoEmailsFound(false)
+        setNoEmailsFound(false);
+        props.showAlert("Cleared", "Success");
+        props.showAlertColor("success");
+
     }
     const handleOnChange = (event) => {
-        console.log("on change")
-        setText(event.target.value)
+        console.log("on change");
+        setText(event.target.value);
     }
     const [text, setText] = useState("");
     const [extractedEmails, setExtractedEmails] = useState([]);
