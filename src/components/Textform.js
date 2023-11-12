@@ -66,7 +66,7 @@ export default function Textform(props) {
             <p>{text.split(" ").filter((element)=>{return element.length !== 0}).length} words and {text.length} characters</p>
             <p>{0.008 * text.split(" ").filter((element)=>{return element.length !== 0}).length} mins to read all characters</p>
             <h2>Preview</h2>
-            <p>{text.length > 0? text : "Enter some text to preview it"}</p>
+            <p>{text.split(" ").filter((element)=>{return element.length !== 0}).length > 0? text: "Enter some text to preview it" }</p>
           </div>
           <div className="container my-3" style={{color: props.mode==='light'?'black':'white'}}>
             {noEmailsFound ? (
